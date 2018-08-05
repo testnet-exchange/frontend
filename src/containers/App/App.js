@@ -12,15 +12,11 @@ export default class App extends Component {
   }
 
   _fetchSavedUser() {
-    const userData = JSON.parse(localStorage.getItem('userData'))
+    const access_token = localStorage.getItem('access_token')
 
-    if (!userData) return
-    if (!userData.user) return
-    if (!userData.user.id) return
-
-    const { user: { id } } = userData
-
-    actions.user.setUser(id)
+    if (access_token) {
+      actions.user.getMe(access_token)
+    }
   }
 
   render() {

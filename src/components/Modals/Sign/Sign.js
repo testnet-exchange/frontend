@@ -17,7 +17,12 @@ export default class Sign extends Component  {
     password: '',
   }
 
-  handleSign = () => {
+  handleSignIn = () => {
+    const { name, password } = this.state
+    actions.user.auth(name, password)
+  }
+
+  handleSignUp = () => {
     const { name, password } = this.state
     actions.user.sign(name, password)
   }
@@ -31,7 +36,8 @@ export default class Sign extends Component  {
         <div className="modalSign">
           <Input valueLink={linked.name} />
           <Input valueLink={linked.password} />
-          <Button onClick={this.handleSign}>Sign in</Button>
+          <Button onClick={this.handleSignIn}>Sign in</Button>
+          <Button onClick={this.handleSignUp}>Sign up</Button>
         </div>
       </Modal>
     )
