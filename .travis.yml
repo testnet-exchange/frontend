@@ -8,8 +8,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-  - ssh -i travis caffeinum@testnet.exchange \"cd /home/caffeinum/testnet.exchange
-    && git pull && sh build.sh\"
+    - ssh -i travis caffeinum@testnet.exchange "cd /home/caffeinum/testnet.exchange && git pull && sh build.sh"
   on:
     branch: master
 before_install:
