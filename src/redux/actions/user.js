@@ -1,25 +1,20 @@
 import reducer from '../core/reducers'
+import axios from 'axios'
 
 
-const login = (name, password) => {
+const auth = (name, password) => {
+  const url = 'https://testnet.exchange/api/auth'
 
-  const btc = generate(name)
-  const eth = generate(password)
-  const id = Math.pow(password.length, Math.random())
-
-  reducer.user.login({ name, id, eth, btc, btcBalance: 13, ethBalance: 274 })
-}
-
-const generate = (value) => {
-  const possible = `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`
-
-  for (let i = 0; i < 5; i++) {
-    value += possible.charAt(Math.floor(Math.random() * possible.length))
-  }
-
-  return value
+  axios.post(url, '', {
+    headers: {
+      Authorization: `Basic ${btoa(`${name}:${password}`)}`,
+    }
+  })
+    .then(({ data }) => {
+      reducer.user.setAuth({ data })
+    })
 }
 
 export default {
-  login,
+  auth,
 }
