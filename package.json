@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && ssh testnet.exchange \"cd /home/caffeinum/testnet.exchange && git pull && sh build.sh\""
   }
 }
