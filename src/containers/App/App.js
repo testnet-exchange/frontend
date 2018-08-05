@@ -8,11 +8,19 @@ import ModalConductor from '../../components/modal/ModalConductor/ModalConductor
 export default class App extends Component {
 
   componentWillMount() {
-    const { user: { id } } = JSON.parse(localStorage.getItem('userData'))
+    this._fetchSavedUser()
+  }
 
-    if (id !== null) {
-      actions.user.setUser(id)
-    }
+  _fetchSavedUser() {
+    const userData = JSON.parse(localStorage.getItem('userData'))
+
+    if (!userData) return
+    if (!userData.user) return
+    if (!userData.user.id) return
+
+    const { user: { id } } = userData
+
+    actions.user.setUser(id)
   }
 
   render() {
