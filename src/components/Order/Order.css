@@ -1,0 +1,9 @@
+.active {
+    background: green;
+    outline: none;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
