@@ -5,13 +5,14 @@ node_js:
 script:
   - npm run build
 deploy:
+  provider: script
   skip_cleanup: true
   script:
     - ssh -i travis caffeinum@testnet.exchange \"cd /home/caffeinum/testnet.exchange && git pull && sh build.sh\"
   on:
     branch: master
 before_install:
-  - openssl aes-256-cbc -K $encrypted_1dbd2aab2682_key -iv $encrypted_1dbd2aab2682_iv
+  - openssl aes-256-cbc -K $encrypted_78752590a3f1_key -iv $encrypted_78752590a3f1_iv
     -in travis.enc -out travis -d
   - eval "$(ssh-agent -s)"
   - chmod 600 ./travis
