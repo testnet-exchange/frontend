@@ -19,7 +19,7 @@ export default class Sign extends Component  {
 
   handleSign = () => {
     const { name, password } = this.state
-    actions.user.auth(name, password)
+    actions.user.sign(name, password)
   }
 
   render () {
