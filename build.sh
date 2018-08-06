@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git pull
+git reset --hard origin/master
 
 changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
 
