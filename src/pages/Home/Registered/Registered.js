@@ -1,9 +1,11 @@
 import React from 'react'
+
 import './Registered.css'
 
+import OrderTable from '../OrderTable/OrderTable'
 
 const Registered = () => (
-  <h1>Registered</h1>
+  <OrderTable></OrderTable>
 )
 
 export default Registered
