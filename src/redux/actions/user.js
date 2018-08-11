@@ -1,13 +1,14 @@
 import reducer from '../core/reducers'
 import axios from 'axios'
 
-const API_ROOT = `https://testnet.exchange/api`
+import { API_ROOT } from './api'
+
 const getAuthHeaders = (access_token) => ({
   Authorization: `Bearer ${access_token}`
 })
 
 const auth = (name, password) => {
-  const url = 'https://testnet.exchange/api/auth'
+  const url = `${API_ROOT}/auth`
 
   axios.post(url, '', {
     headers: {
@@ -22,13 +23,13 @@ const auth = (name, password) => {
 }
 
 const setUser = (id) => {
-  const url = `https://testnet.exchange/api/users/${id}`
+  const url = `${API_ROOT}/users/${id}`
   axios.get(url)
     .then(result => console.log(result))
 }
 
 const sign = (name, password) => {
-  const url = 'https://testnet.exchange/api/users/sign-up'
+  const url = `${API_ROOT}/users/sign-up`
 
   axios.post(url, { "email": name, "password": password })
     .then(({ data }) => {
