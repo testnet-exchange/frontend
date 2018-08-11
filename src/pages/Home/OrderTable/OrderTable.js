@@ -31,11 +31,18 @@ class OrderTable extends Component {
       <Row row={row} key={index} />
     )
 
+    const ascending   = (o1,o2) => o2[0] - o1[0]
+    // const descending  = (o1,o2) => o1[0] - o2[0]
+
+    const _asks = asks.filter((order, index) => index < 10).sort(ascending)
+    const _bids = bids.filter((order, index) => index < 10).sort(ascending)
+
     return (
       <div>
-        <h1>Registered</h1>
-        <Table className="asks" titles={orderBookTitles} rows={asks} rowRender={renderOrder}></Table>
-        <Table className="bids" titles={orderBookTitles} rows={bids} rowRender={renderOrder}></Table>
+        <h3>Asks</h3>
+        <Table className="asks" titles={orderBookTitles} rows={_asks} rowRender={renderOrder}></Table>
+        <h3>Bids</h3>
+        <Table className="bids" titles={orderBookTitles} rows={_bids} rowRender={renderOrder}></Table>
       </div>
     )
   }
