@@ -11,11 +11,13 @@ import './OrderTable.css'
 class OrderTable extends Component {
 
   componentWillMount() {
-    actions.orders.getOrderbook({
-      market: 'TESTNET3RINKEBY',
-      limit: '100',
-      interval: '0',
-    })
+    setInterval(() => {
+      actions.orders.getOrderbook({
+        market: 'TESTNET3RINKEBY',
+        limit: '100',
+        interval: '0',
+      })
+    }, 500)
   }
 
 
