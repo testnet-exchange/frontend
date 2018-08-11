@@ -30,7 +30,8 @@ export default (_method, _params = {}) => {
     throw new Error(`no method ${_method}`)
   }
 
-  const { token: access_token } = getState()
+  const { token: access_token } = getState().user
+
 
   if (method.role !== 'public') {
     if (typeof access_token !== 'string') {
