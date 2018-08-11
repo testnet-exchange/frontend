@@ -39,6 +39,13 @@ const sign = (name, password) => {
     })
 }
 
+const getUser = () => {
+  const token = localStorage.getItem('access_token')
+
+  localStorage.setItem('access_token', token)
+  reducer.user.setAuth({ data: { token }})
+}
+
 const getMe = (access_token) => {
   const headers = getAuthHeaders(access_token)
 
@@ -53,4 +60,5 @@ export default {
   sign,
   getMe,
   setUser,
+  getUser,
 }
