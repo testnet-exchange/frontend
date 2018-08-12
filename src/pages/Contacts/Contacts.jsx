@@ -10,6 +10,8 @@ const Contacts = () => (
       <a href="https://github.com/testnet-exchange" target="_blank" rel="noopener noreferrer" >GitHub</a>
       <br />
       <a href="https://t.me/testnet_exchange" target="_blank" rel="noopener noreferrer">Telegram Chat</a>
+      <br />
+      <a href="http://twitter.com/testnetexchange" target="_blank" rel="noopener noreferrer">Twitter</a>
     </WidthContainer>
   </section>
 )
