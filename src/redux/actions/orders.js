@@ -2,8 +2,12 @@ import reducer from '../core/reducers'
 
 import callApi from './api'
 
-const getOrderbook = (params) =>
-  callApi(`order.depth`, params)
+const getOrderbook = () =>
+  callApi(`order.depth`, {
+    market: 'TESTNET3RINKEBY',
+    limit: '10',
+    interval: '0',
+  })
     .then(({ asks, bids }) =>
       reducer.orders.setOrders({ asks, bids }))
 
@@ -11,9 +15,22 @@ const getMarketStatus = (params) =>
   callApi(`market.status_today`, params)
     .then((status) => {})
 
-const fetchMyOrders = (params) =>
+
+const getСompletedOrders = () =>
+  callApi(`market.deals`, {
+    market: 'TESTNET3RINKEBY',
+    limit: 10,
+    last_id: 0,
+  })
+    .then(completedOrders => {
+      reducer.orders.setCompletedOrders({ completedOrders })
+    })
+
+
+
+const fetchMyOrders = () =>
   callApi(`order.pending`, {
-    market: params.market,
+    market: 'TESTNET3RINKEBY',
     offset: 0,
     limit: 100
   })
@@ -28,6 +45,7 @@ const createOrder = (params) =>
 export default {
   getOrderbook,
   getMarketStatus,
+  getСompletedOrders,
   createOrder,
   fetchMyOrders,
 }

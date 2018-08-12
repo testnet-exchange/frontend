@@ -4,10 +4,10 @@ import callApi from './api'
 
 const fetch = () =>
   callApi(`balance.query`)
-    .then((list) => {
+    .then(({ RINKEBY, TESTNET3 }) => {
       reducer.balance.updateBalance({
-        eth: list.RINKEBY,
-        btc: list.TESTNET3,
+        eth: RINKEBY,
+        btc: TESTNET3,
       })
     })
 

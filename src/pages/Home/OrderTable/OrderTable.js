@@ -6,35 +6,25 @@ import actions from '../../../redux/actions'
 import './OrderTable.css'
 
 import Pair from '../Pair/Pair'
+import MyOrders from '../MyOrders/MyOrders'
+import CompletedOrders from '../CompletedOrders/CompletedOrders'
 
 
 class OrderTable extends Component {
 
   componentWillMount() {
-    // setInterval(() => {
-    //
-    // }, 500)
-
-    actions.orders.getOrderbook({
-      market: 'TESTNET3RINKEBY',
-      limit: '100',
-      interval: '0',
-    })
-
-    actions.orders.fetchMyOrders({
-      market: 'TESTNET3RINKEBY',
-      limit: '100',
-      interval: '0',
-    })
+    setInterval(() => {
+      actions.orders.fetchMyOrders()
+      actions.orders.getOrderbook()
+      actions.orders.getСompletedOrders()
+    }, 1000)
   }
 
   filterRequest = (arr, sort) => {
-    const firstN = (n) => (order, index) => index < n
-
     const ascending   = (o1,o2) => o1[0] - o2[0]
     const descending  = (o1,o2) => o2[0] - o1[0]
 
-    return arr.filter(firstN(10)).sort(sort ? ascending : descending)
+    return arr.sort(sort ? ascending : descending)
   }
 
 
@@ -44,25 +34,31 @@ class OrderTable extends Component {
 
     if (!orders) return null
 
-    const { asks, bids, myOrders  } = orders
-    const genArray = (n) => Array(n).fill([])
+    const { asks, bids, myOrders, completed  } = orders
+
+    console.log(this.filterRequest(asks, true))
 
     return (
       <div className="rowTabele">
         <Pair
-          title="ASKS"
-          rows={this.filterRequest(asks, true)}
-          titles={orderBookTitles}
-        />
-        <Pair
-          title="BIDS"
+          title="Bids"
           rows={this.filterRequest(bids, false)}
           titles={orderBookTitles}
         />
         <Pair
-          title="My orders"
-          rows={this.filterRequest([ ...myOrders, ...genArray(10) ], true)}
+          title="Asks"
+          rows={this.filterRequest(asks, true)}
           titles={orderBookTitles}
+        />
+        <MyOrders
+          title="My orders"
+          rows={this.filterRequest([...Object.keys(myOrders).map(k => myOrders[k])], true)}
+          titles={['PRICE', 'LIMIT', 'MARKET', 'AMOUNT']}
+        />
+        <CompletedOrders
+          title="Last completed orders"
+          rows={this.filterRequest([...Object.keys(completed).map(k => completed[k])], true)}
+          titles={['PRICE', 'AMOUNT']}
         />
       </div>
     )

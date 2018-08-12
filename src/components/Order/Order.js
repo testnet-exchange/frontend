@@ -137,8 +137,19 @@ class Order extends Component {
     return (
       <div className="row">
         <div>
-          <Button color={active === 'buy' ? 'secondary' : 'default'} onClick={this.handleBuyActive} > buy </Button>
-          <Button color={active === 'buy' ? 'default' : 'primary'} onClick={this.handleSellActive} > sell </Button>
+          <Button
+            style={active === 'buy' ? { background: 'green' } : {} }
+            color={active === 'buy' ? 'primary' : 'default'}
+            onClick={this.handleBuyActive}
+          >
+            buy
+          </Button>
+          <Button
+            color={active === 'buy' ? 'default' : 'secondary'}
+            onClick={this.handleSellActive}
+          >
+            sell
+          </Button>
         </div>
         <Group
           linkInput={linked.sellAmount.onChange(this.handleSellAmountChange)}
