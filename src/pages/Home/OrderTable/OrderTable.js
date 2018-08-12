@@ -44,8 +44,8 @@ class OrderTable extends Component {
 
     if (!orders) return null
 
-    const { asks, bids, /* myOrders */ } = orders
-    // const genArray = (n) => Array(n).fill([])
+    const { asks, bids, myOrders  } = orders
+    const genArray = (n) => Array(n).fill([])
 
     return (
       <div className="rowTabele">
@@ -57,6 +57,11 @@ class OrderTable extends Component {
         <Pair
           title="BIDS"
           rows={this.filterRequest(bids, false)}
+          titles={orderBookTitles}
+        />
+        <Pair
+          title="My orders"
+          rows={this.filterRequest([ ...myOrders, ...genArray(10) ], true)}
           titles={orderBookTitles}
         />
       </div>

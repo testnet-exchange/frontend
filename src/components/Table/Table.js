@@ -14,12 +14,14 @@ const Table = ({ titles, rows, rowRender }) => (
     </tr>
     </thead>
     <tbody>
-    {  // eslint-disable-next-line
-      rows.map((row, rowIndex) => {
-        if (typeof rowRender === 'function') {
-          return rowRender(row, rowIndex)
-        }
-      })
+    {
+      rows.length > 0 ? (
+        rows.map((row, rowIndex) => typeof rowRender === 'function' ? rowRender(row, rowIndex) : null)
+      ) : (
+        <tr>
+            <td>Table is empty</td>
+        </tr>
+      )
     }
     </tbody>
   </table>
