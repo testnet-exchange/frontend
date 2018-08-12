@@ -38,7 +38,7 @@ export default class Sign extends Component  {
           <Input valueLink={linked.name} className="inputSign" placeholder="google@gmail.com" />
           <span style={{ fontSize: '14px' }}>Enter your password</span>
           <Input valueLink={linked.password} className="inputSign" placeholder="password" />
-          <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '5px' }}>
             <Button onClick={this.handleSignIn}>Sign in</Button>
             <Button  color="primary" onClick={this.handleSignUp}>Sign up</Button>
           </div>

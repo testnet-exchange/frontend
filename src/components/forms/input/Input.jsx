@@ -8,7 +8,7 @@ import { Input as ValueLinkInput } from 'valuelink/tags'
 export default class Input extends Component {
   render () {
     const {
-      className, inputContainerClassName, inputClassName,
+      inputContainerClassName, inputClassName,
       valueLink: { error }, valueLink,
       focusOnInit, disabled, readOnly, type, placeholder
     } = this.props

@@ -44,8 +44,8 @@ class OrderTable extends Component {
 
     if (!orders) return null
 
-    const { asks, bids, myOrders } = orders
-    const genArray = (n) => Array(n).fill([])
+    const { asks, bids, /* myOrders */ } = orders
+    // const genArray = (n) => Array(n).fill([])
 
     return (
       <div className="rowTabele">

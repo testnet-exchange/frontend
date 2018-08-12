@@ -4,7 +4,18 @@
     border-radius: 20px;
     justify-content: center;
     align-items: center;
+    position: relative;
     background: #ffffff;
     text-align: center;
+    padding-top: 40px;
     box-shadow: 0 3px 9px 0 rgba(0,0,0,0.06);
+}
+
+.icon_close {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
 }

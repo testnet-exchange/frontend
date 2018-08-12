@@ -1,7 +1,5 @@
 import React from 'react'
 
-import cx from 'classnames'
-
 import { withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 
