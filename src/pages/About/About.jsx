@@ -1,9 +1,13 @@
 import React from 'react'
 
+import WidthContainer from '../../components/layout/WidthContainer/WidthContainer'
+
+
 const About = () => (
   <section>
-    <h1>About</h1>
-
+    <WidthContainer>
+      <h1>About</h1>
+    </WidthContainer>
   </section>
 )
 
