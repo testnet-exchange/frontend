@@ -10,7 +10,7 @@ export default class Input extends Component {
     const {
       className, inputContainerClassName, inputClassName,
       valueLink: { error }, valueLink,
-      focusOnInit, disabled, readOnly, type
+      focusOnInit, disabled, readOnly, type, placeholder
     } = this.props
 
     const inputContainerStyleName = cx('inputContainer', {
@@ -18,12 +18,13 @@ export default class Input extends Component {
     })
 
     return (
-      <div className={`root ${className}`} >
+      <div className="root" >
         <div className={`${inputContainerStyleName} ${inputContainerClassName}`}>
           {
             React.createElement(ValueLinkInput, {
               className: 'input ' + inputClassName,
               valueLink,
+              placeholder,
               type,
               disabled: disabled || readOnly,
               autoFocus: !!focusOnInit,

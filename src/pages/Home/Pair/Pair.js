@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './Pair.css'
 
 import Table from '../../../components/Table/Table'
 import Row from './Row/Row'
 
+
 const Pair = ({ titles, rows, title }) => (
   <div className="pair">
-    <h2>{title}</h2>
+    <h3>{title}</h3>
     <Table
       titles={titles}
       rows={rows}

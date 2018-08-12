@@ -3,6 +3,7 @@ import { connect } from 'redaction'
 import actions from '../../redux/actions'
 
 import Order from '../../components/Order/Order'
+import WidthContainer from '../../components/layout/WidthContainer/WidthContainer'
 
 import NewUser from './NewUser/NewUser'
 import Registered from './Registered/Registered'
@@ -29,15 +30,16 @@ class Home extends Component {
 
     return (
       <section>
-        <h1>Home</h1>
-        <Order />
-        {
-          name === undefined ? (
-            <NewUser />
-          ) : (
-            <Registered />
-          )
-        }
+        <WidthContainer>
+          <Order />
+          {
+            name === undefined ? (
+              <NewUser />
+            ) : (
+              <Registered />
+            )
+          }
+        </WidthContainer>
       </section>
     )
   }

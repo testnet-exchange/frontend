@@ -1,4 +1,10 @@
 .row {
     display: flex;
     align-items: center;
+    height: 40px;
+}
+
+.select {
+    padding: 10px 15px;
+    height: 40px;
 }

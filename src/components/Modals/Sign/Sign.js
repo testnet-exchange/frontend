@@ -34,10 +34,14 @@ export default class Sign extends Component  {
     return (
       <Modal name={name} >
         <div className="modalSign">
-          <Input valueLink={linked.name} />
-          <Input valueLink={linked.password} />
-          <Button onClick={this.handleSignIn}>Sign in</Button>
-          <Button onClick={this.handleSignUp}>Sign up</Button>
+          <span style={{ fontSize: '14px' }}>Enter your email</span>
+          <Input valueLink={linked.name} className="inputSign" placeholder="google@gmail.com" />
+          <span style={{ fontSize: '14px' }}>Enter your password</span>
+          <Input valueLink={linked.password} className="inputSign" placeholder="password" />
+          <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+            <Button onClick={this.handleSignIn}>Sign in</Button>
+            <Button  color="primary" onClick={this.handleSignUp}>Sign up</Button>
+          </div>
         </div>
       </Modal>
     )

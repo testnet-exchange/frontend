@@ -1,9 +1,29 @@
 import React from 'react'
-import './Button.css'
+
+import cx from 'classnames'
+
+import { withStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
 
 
-const Button = ({ onClick, children }) => (
-  <button className="button" onClick={onClick}>{children}</button>
-)
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+  },
+  input: {
+    display: 'none',
+  },
+})
 
-export default Button
+
+const ButtonUI = (props) => {
+  const { onClick, children, classes, ...rest } = props
+
+  return (
+    <Button variant="contained" {...rest} className={classes.button} onClick={onClick}>{children}</Button>
+  )
+
+}
+
+
+export default withStyles(styles)(ButtonUI)

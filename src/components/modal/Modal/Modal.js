@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import './Modal.css'
 
 import actions from '../../../redux/actions'
+import { Button } from '../../controls'
+
 
 export default class Modal extends Component {
 
@@ -15,7 +18,7 @@ export default class Modal extends Component {
 
     return (
       <div className="modalTemplate">
-        <button onClick={this.close} > Close</button>
+        <Button color="secondary" onClick={this.close} > Close</Button>
         <div className="contentContainer">
           {children}
         </div>

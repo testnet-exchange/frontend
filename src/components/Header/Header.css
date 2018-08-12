@@ -1,11 +1,9 @@
 .header {
     width: 100%;
-    height: 40px;
-    padding: 20px 00px;
-    background: green;
-    display: flex;
-    align-items: center;
+    height: 80px;
+    margin-top: 40px;
 }
+
 
 .header p {
     margin: 0;

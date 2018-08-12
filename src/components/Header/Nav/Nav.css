@@ -1,0 +1,13 @@
+.link {
+    font-size: 18px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navigation {
+    display: inline;
+}

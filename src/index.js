@@ -4,19 +4,21 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './redux/store'
 import routes from './routes'
-import { BrowserRouter } from 'react-router-dom'
+import { Router } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
 
 import App from './containers/App/App'
 
+const history = createBrowserHistory()
 
 
 render(
    <Provider store={store} >
-     <BrowserRouter>
+     <Router history={history}>
        <App>
          {routes}
        </App>
-     </BrowserRouter>
+     </Router>
    </Provider>
   , document.getElementById('root')
 )

@@ -1,29 +1,26 @@
 import React from 'react'
 import './Header.css'
 
-import { connect } from 'redaction'
 import actions from '../../redux/actions'
+import WidthContainer from '../layout/WidthContainer/WidthContainer'
 
 import Nav from './Nav/Nav'
+import Info from './Info/Info'
 import { Button } from '../controls'
 
 
-const Header = ({ name, ethBalance, btcBalance }) => (
+const Header = () => (
   <header className="header">
-    <Nav />
-    <Button onClick={() => actions.modals.open('Sign', {})}>Sign up</Button>
-    <Button onClick={() => actions.balance.fetch()}>Fetch balance</Button>
-    <div>
-      <p>Name: {name}</p>
-      <p>Balance:</p>
-      <p>ETH: {ethBalance}</p>
-      <p>BTC: {btcBalance}</p>
-    </div>
+    <WidthContainer>
+      <div className="row">
+        <Nav />
+        <Button onClick={() => actions.modals.open('Sign', {})}>Sign up</Button>
+        <Button color="secondary" onClick={actions.balance.fetch}>Fetch balance</Button>
+        <Info />
+      </div>
+    </WidthContainer>
   </header>
 )
 
-export default connect({
-  name: 'user.name',
-  ethBalance: 'balance.eth.available',
-  btcBalance: 'balance.btc.available',
-})(Header)
+export default Header
+

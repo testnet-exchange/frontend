@@ -5,6 +5,7 @@ import './Order.css'
 
 import Link from 'valuelink'
 import Group from './Group/Group'
+import { Button } from '../controls'
 
 
 const rating = {
@@ -30,8 +31,8 @@ class Order extends Component {
   handleCreateOrder = () => {
     const { buyAmount, sellAmount, buyCurrency } = this.state
 
-    const buy   = parseFloat(buyAmount, 10)
-    const sell  = parseFloat(sellAmount, 10)
+    const buy   = parseFloat(buyAmount)
+    const sell  = parseFloat(sellAmount)
 
     if (!buy || !sell) return
 
@@ -136,8 +137,8 @@ class Order extends Component {
     return (
       <div className="row">
         <div>
-          <button onClick={this.handleBuyActive} className={active === 'buy' ? 'btn active' : 'btn'}> buy </button>
-          <button onClick={this.handleSellActive} className={active === 'sell' ? 'btn active' : 'btn'}> sell </button>
+          <Button color={active === 'buy' ? 'secondary' : 'default'} onClick={this.handleBuyActive} > buy </Button>
+          <Button color={active === 'buy' ? 'default' : 'primary'} onClick={this.handleSellActive} > sell </Button>
         </div>
         <Group
           linkInput={linked.sellAmount.onChange(this.handleSellAmountChange)}
@@ -148,7 +149,7 @@ class Order extends Component {
           linkInput={linked.buyAmount.onChange(this.handleBuyAmountChange)}
           linkSelect={linked.buyCurrency.onChange(this.handleBuyCurrencyChange)}
         />
-      <button onClick={this.handleCreateOrder}>Create order</button>
+      <Button color="secondary" onClick={this.handleCreateOrder}>Create order</Button>
       </div>
     )
   }

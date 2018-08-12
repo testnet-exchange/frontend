@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import actions from '../../redux/actions'
 
+import './App.css'
+
 import Header from '../../components/Header/Header'
 import ModalConductor from '../../components/modal/ModalConductor/ModalConductor'
 
