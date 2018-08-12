@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import actions from '../../redux/actions'
+
 import './Order.css'
 
 import Link from 'valuelink'
@@ -23,6 +25,35 @@ class Order extends Component {
   componentWillMount() {
     const { sellCurrency, buyCurrency } = this.state
     this.handleSetRate(sellCurrency, buyCurrency)
+  }
+
+  handleCreateOrder = () => {
+    const { buyAmount, sellAmount, buyCurrency } = this.state
+
+    const buy   = parseFloat(buyAmount, 10)
+    const sell  = parseFloat(sellAmount, 10)
+
+    if (!buy || !sell) return
+
+    const isBid = buyCurrency === 'ETH'
+
+    const price   = isBid ? sell/buy  : buy/sell
+    const amount  = isBid ? buy       : sell
+
+    // ASK 0.9 ETH -> 0.05 BTC  p = 0.05/0.9 > 0.5
+    // BID 1 ETH <- 0.04 BTC    p = 0.04     < 0.5
+
+    const params = {
+      market: 'TESTNET3RINKEBY',
+      side: isBid ? 2 : 1,
+      amount: String(amount),
+      price: String(price),
+      taker_fee_rate: '1',
+      maker_fee_rate: '1',
+      source: ''
+    }
+
+    actions.orders.createOrder(params)
   }
 
   handleSellActive = () => {
@@ -117,7 +148,7 @@ class Order extends Component {
           linkInput={linked.buyAmount.onChange(this.handleBuyAmountChange)}
           linkSelect={linked.buyCurrency.onChange(this.handleBuyCurrencyChange)}
         />
-        <button>Create order</button>
+      <button onClick={this.handleCreateOrder}>Create order</button>
       </div>
     )
   }

@@ -42,7 +42,7 @@ export default (_method, _params = {}) => {
   const url = `${API_ROOT}/trade/${method.role}/${method.name}`
   const headers = getAuthHeaders(access_token)
 
-  const params = { ...method.predefined, ..._params }
+  const params = { ..._params }
 
   return sendRequest(method.name, url, { params, headers })
 }

@@ -10,7 +10,12 @@ export const setOrders = (state, { asks, bids }) => ({
   bids,
 })
 
-export const createOrder = (state, { order }) => ({
+export const setMyOrders = (state, { myOrders }) => ({
+  ...state,
+  myOrders: myOrders.map(({ price, left }) => [ price, left ]),
+})
+
+export const createOrder = (state, order) => ({
   ...state,
   myOrders: [ ...state.myOrders, order ],
 })
