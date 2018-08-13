@@ -1,5 +1,5 @@
 .modalTemplate {
-    width: 250px;
+    width: 450px;
     padding: 15px 25px;
     border-radius: 20px;
     justify-content: center;
@@ -8,7 +8,7 @@
     background: #ffffff;
     text-align: center;
     padding-top: 40px;
-    box-shadow: 0 3px 9px 0 rgba(0,0,0,0.06);
+    box-shadow: 0 3px 9px 0 rgba(0,0,0,0.36);
 }
 
 .icon_close {
