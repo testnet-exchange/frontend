@@ -29,24 +29,22 @@ class Order extends Component {
   }
 
   handleCreateOrder = () => {
-    const { buyAmount, sellAmount, buyCurrency } = this.state
+    const { buyAmount, sellAmount, active } = this.state
 
     const buy   = parseFloat(buyAmount)
     const sell  = parseFloat(sellAmount)
 
     if (!buy || !sell) return
 
-    const isBid = buyCurrency === 'ETH'
-
-    const price   = isBid ? sell/buy  : buy/sell
-    const amount  = isBid ? buy       : sell
+    const price   = active === 'sell' ? sell/buy  : buy/sell
+    const amount  = active === 'sell' ? sell : buy
 
     // ASK 0.9 ETH -> 0.05 BTC  p = 0.05/0.9 > 0.5
     // BID 1 ETH <- 0.04 BTC    p = 0.04     < 0.5
 
     const params = {
       market: 'TESTNET3RINKEBY',
-      side: isBid ? 2 : 1,
+      side: active === 'sell' ? 1 : 2,
       amount: String(amount),
       price: String(price),
       taker_fee_rate: '1',
@@ -156,7 +154,6 @@ class Order extends Component {
           linkSelect={linked.sellCurrency.onChange(this.handleSellCurrencyChange)}
         />
         <Group
-          readOnly
           linkInput={linked.buyAmount.onChange(this.handleBuyAmountChange)}
           linkSelect={linked.buyCurrency.onChange(this.handleBuyCurrencyChange)}
         />
