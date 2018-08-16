@@ -17,10 +17,10 @@ const Header = () => (
         <Button onClick={() => actions.modals.open('Sign', {})}>Sign up</Button>
         <Button color="secondary" onClick={actions.balance.fetch}>Fetch balance</Button>
         <Info />
+        <Button styleName="deposit" onClick={() => actions.modals.open('Deposit', {})}>Deposit</Button>
       </div>
     </WidthContainer>
   </header>
 )
 
 export default Header
-

@@ -1,6 +1,8 @@
 import reducer from '../core/reducers'
 import axios from 'axios'
 
+import { getState } from '../core'
+
 import { API_ROOT } from './api'
 
 const getAuthHeaders = (access_token) => ({
@@ -55,10 +57,27 @@ const getMe = (access_token) => {
     })
 }
 
+const fetchAddress = async () => {
+  const { token: access_token } = getState().user
+
+  const headers = getAuthHeaders(access_token)
+
+  const { data } = await axios(`${API_ROOT}/deposit/get-address`, { headers })
+
+  const { error, result } = data
+
+  if (error) {
+    console.error(error)
+  } else {
+    reducer.user.setDepositAddress({ data: { address: result }})
+  }
+}
+
 export default {
   auth,
   sign,
   getMe,
   setUser,
   getUser,
+  fetchAddress,
 }
