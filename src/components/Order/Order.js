@@ -31,21 +31,17 @@ class Order extends Component {
   handleCreateOrder = () => {
     const { buyAmount, sellAmount, active } = this.state
 
-    const buy   = parseFloat(buyAmount)
-    const sell  = parseFloat(sellAmount)
+    const secondary_amount   = parseFloat(buyAmount)
+    const base_amount  = parseFloat(sellAmount)
 
-    if (!buy || !sell) return
+    if (!secondary_amount || !base_amount) return
 
-    const price   = active === 'sell' ? sell/buy  : buy/sell
-    const amount  = active === 'sell' ? sell : buy
-
-    // ASK 0.9 ETH -> 0.05 BTC  p = 0.05/0.9 > 0.5
-    // BID 1 ETH <- 0.04 BTC    p = 0.04     < 0.5
+    const price   =  secondary_amount/base_amount
 
     const params = {
       market: 'TESTNET3RINKEBY',
       side: active === 'sell' ? 2 : 1,
-      amount: String(amount),
+      amount: String(base_amount),
       price: String(price),
       taker_fee_rate: '1',
       maker_fee_rate: '1',
