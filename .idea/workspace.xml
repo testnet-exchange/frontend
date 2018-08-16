@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51a9dba0-c874-43e9-9c0c-8f455327d134" name="Default Changelist" comment="">
+    <list default="true" id="51a9dba0-c874-43e9-9c0c-8f455327d134" name="Default Changelist" comment="fix create orders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Order/Group/Group.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Order/Group/Group.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Order/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Order/Order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/input/Input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrdersRow/MyOrdersRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrdersRow/MyOrdersRow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/OrderTable/OrderTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/OrderTable/OrderTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/orders.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,8 +34,8 @@
           <entry key="css" value="61" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
-          <entry key="js" value="196" />
-          <entry key="json" value="6" />
+          <entry key="js" value="199" />
+          <entry key="json" value="7" />
           <entry key="jsx" value="35" />
           <entry key="svg" value="4" />
           <entry key="ts" value="2" />
@@ -45,9 +45,9 @@
         <counts>
           <entry key="CSS" value="61" />
           <entry key="HTML" value="3" />
-          <entry key="JSON" value="6" />
+          <entry key="JSON" value="7" />
           <entry key="JSX Harmony" value="35" />
-          <entry key="JavaScript" value="195" />
+          <entry key="JavaScript" value="198" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SVG" value="4" />
           <entry key="TypeScript" value="2" />
@@ -57,11 +57,11 @@
         <counts>
           <entry key="css" value="1425" />
           <entry key="html" value="267" />
-          <entry key="js" value="11674" />
+          <entry key="js" value="11821" />
           <entry key="json" value="3" />
           <entry key="jsx" value="2743" />
           <entry key="svg" value="1" />
-          <entry key="txt" value="94" />
+          <entry key="txt" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -70,8 +70,8 @@
           <entry key="HTML" value="267" />
           <entry key="JSON" value="3" />
           <entry key="JSX Harmony" value="2743" />
-          <entry key="JavaScript" value="11590" />
-          <entry key="PLAIN_TEXT" value="178" />
+          <entry key="JavaScript" value="11737" />
+          <entry key="PLAIN_TEXT" value="195" />
           <entry key="SVG" value="1" />
         </counts>
       </usages-collector>
@@ -97,10 +97,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrders.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="25" selection-start-column="25" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrdersRow/MyOrdersRow.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/Home/OrderTable/OrderTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="20" column="37" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="37" />
+            <state relative-caret-position="-134">
+              <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -109,10 +127,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/redux/reducers/orders.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="704">
+              <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Order/Order.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="-2247">
+              <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -123,8 +150,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/redux/actions/orders.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+            <state relative-caret-position="486">
+              <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -139,6 +166,8 @@
       <find>styleName</find>
       <find>.acti</find>
       <find>last_id</find>
+      <find>order.put_limit</find>
+      <find>createOrder</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,17 +216,17 @@
         <option value="$PROJECT_DIR$/src/pages/Home/Pair/MyOrdersRow/Row.js" />
         <option value="$PROJECT_DIR$/src/pages/Home/Pair/Pair.js" />
         <option value="$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrders.js" />
-        <option value="$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrdersRow/MyOrdersRow.js" />
         <option value="$PROJECT_DIR$/src/pages/Home/CompletedOrders/CompletedOrders.js" />
         <option value="$PROJECT_DIR$/src/pages/Home/CompletedOrders/Row/Row.js" />
-        <option value="$PROJECT_DIR$/src/redux/reducers/orders.js" />
         <option value="$PROJECT_DIR$/src/components/Header/Header.jsx" />
         <option value="$PROJECT_DIR$/src/pages/Home/Home.js" />
         <option value="$PROJECT_DIR$/src/components/Order/Group/Group.js" />
         <option value="$PROJECT_DIR$/src/components/forms/input/Input.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Order/Order.js" />
-        <option value="$PROJECT_DIR$/src/pages/Home/OrderTable/OrderTable.js" />
+        <option value="$PROJECT_DIR$/src/redux/reducers/orders.js" />
         <option value="$PROJECT_DIR$/src/redux/actions/orders.js" />
+        <option value="$PROJECT_DIR$/src/pages/Home/OrderTable/OrderTable.js" />
+        <option value="$PROJECT_DIR$/src/components/Order/Order.js" />
+        <option value="$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrdersRow/MyOrdersRow.js" />
       </list>
     </option>
   </component>
@@ -247,53 +276,6 @@
               <item name="testnet.exchange" type="b2602c69:ProjectViewProjectNode" />
               <item name="testnet.exchange" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testnet.exchange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testnet.exchange" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testnet.exchange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testnet.exchange" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Order" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testnet.exchange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testnet.exchange" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testnet.exchange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testnet.exchange" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testnet.exchange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testnet.exchange" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Home" type="462c0819:PsiDirectoryNode" />
-              <item name="OrderTable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testnet.exchange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testnet.exchange" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="redux" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testnet.exchange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testnet.exchange" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="redux" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -351,7 +333,7 @@
       <updated>1533405476823</updated>
       <workItem from="1533405479031" duration="30004000" />
       <workItem from="1534098874564" duration="2384000" />
-      <workItem from="1534443099705" duration="448000" />
+      <workItem from="1534443099705" duration="2396000" />
     </task>
     <task id="LOCAL-00001" summary="axios">
       <created>1533470032194</created>
@@ -374,17 +356,24 @@
       <option name="project" value="LOCAL" />
       <updated>1534101217850</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix create orders">
+      <created>1534443799392</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1534443799392</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55179000" />
+    <option name="totallyTimeSpent" value="57127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18685955" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18685955" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -398,7 +387,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32977587" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996986" weight="0.3361793" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996986" weight="0.55496264" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030136" side_tool="true" weight="0.23265742" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -435,7 +424,8 @@
     <MESSAGE value="axios" />
     <MESSAGE value="update orders" />
     <MESSAGE value="add my orders, last completed orders and update" />
-    <option name="LAST_COMMIT_MESSAGE" value="add my orders, last completed orders and update" />
+    <MESSAGE value="fix create orders" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix create orders" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/components/Order/Group/Group.css">
@@ -653,13 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrdersRow/MyOrdersRow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="105" lean-forward="true" selection-start-line="9" selection-start-column="105" selection-end-line="9" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/actions/api/callApi.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="842">
@@ -667,13 +650,6 @@
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/actions/api/proto.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -688,13 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="17" column="88" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -755,26 +724,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/reducers/orders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/reducers/user.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/reducers/wallet.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Order/Order.js">
+    <entry file="file://$PROJECT_DIR$/src/redux/actions/api/proto.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="257">
+          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="50" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -788,10 +754,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrdersRow/MyOrdersRow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Home/OrderTable/OrderTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="37" />
+        <state relative-caret-position="-134">
+          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Home/MyOrders/MyOrders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Order/Order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2247">
+          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -800,8 +790,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/actions/orders.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+        <state relative-caret-position="486">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

@@ -7,7 +7,7 @@ export default class MyOrdersRow extends Component {
     const  { row: { price, left, side, amount, market } } = this.props
 
     return (
-      <tr style={ side ? { background: 'rgba(252, 10, 10, 0.1)' } : { background: 'rgba(22, 252, 10, 0.1)' }}>
+      <tr style={ side === 'buy' ? { background: 'rgba(252, 10, 10, 0.1)' } : { background: 'rgba(22, 252, 10, 0.1)' }}>
         <td>{price}</td>
         <td>{left}</td>
         <td>{market}</td>

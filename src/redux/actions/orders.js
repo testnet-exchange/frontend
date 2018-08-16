@@ -26,8 +26,6 @@ const getСompletedOrders = () =>
       reducer.orders.setCompletedOrders({ completedOrders })
     })
 
-
-
 const fetchMyOrders = () =>
   callApi(`order.pending`, {
     market: 'TESTNET3RINKEBY',
@@ -39,8 +37,7 @@ const fetchMyOrders = () =>
 
 const createOrder = (params) =>
   callApi(`order.put_limit`, params)
-    .then(({ price, amount, left }) =>
-      reducer.orders.createOrder([ price, left ]))
+    .then(result => console.log(result))
 
 export default {
   getOrderbook,

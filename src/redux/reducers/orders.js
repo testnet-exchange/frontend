@@ -34,11 +34,3 @@ export const setMyOrders = (state, { myOrders }) => ({
     }))
   }
 })
-
-
-export const createOrder = (state, order) => ({
-  ...state,
-  myOrders: {
-    order,
-  },
-})

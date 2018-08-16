@@ -13,12 +13,11 @@ import CompletedOrders from '../CompletedOrders/CompletedOrders'
 class OrderTable extends Component {
 
   componentWillMount() {
-    // setInterval(() => {
-    //  
-    // }, 1000)
-    actions.orders.fetchMyOrders()
-    actions.orders.getOrderbook()
-    actions.orders.getСompletedOrders()
+    setInterval(() => {
+      actions.orders.fetchMyOrders()
+      actions.orders.getOrderbook()
+      actions.orders.getСompletedOrders()
+    }, 1000)
   }
 
   filterRequest = (arr, sort) => {
