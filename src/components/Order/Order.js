@@ -114,10 +114,12 @@ class Order extends Component {
           </Button>
         </div>
         <Group
+          readOnly={true}
           linkInput={linked.sellAmount.onChange(this.handleSellAmountChange)}
           linkSelect={linked.sellCurrency.onChange(this.handleSellCurrencyChange)}
         />
         <Group
+          readOnly={true}
           linkInput={linked.buyAmount.onChange(this.handleBuyAmountChange)}
           linkSelect={linked.buyCurrency.onChange(this.handleBuyCurrencyChange)}
         />
