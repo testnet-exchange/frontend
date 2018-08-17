@@ -8,11 +8,6 @@ import Group from './Group/Group'
 import { Button } from '../controls'
 
 
-const rating = {
-  ETHBTC: 0.05,
-  BTCETH: 17.2
-}
-
 class Order extends Component {
 
   state = {
@@ -23,28 +18,23 @@ class Order extends Component {
     buyCurrency: 'BTC',
   }
 
-  componentWillMount() {
-    const { sellCurrency, buyCurrency } = this.state
-    this.handleSetRate(sellCurrency, buyCurrency)
-  }
-
   handleCreateOrder = () => {
     const { buyAmount, sellAmount, active } = this.state
 
-    const secondary_amount   = parseFloat(buyAmount)
-    const base_amount  = parseFloat(sellAmount)
+    const base_amount       = parseFloat(buyAmount) // active === 'sell' ? parseFloat(buyAmount) : parseFloat(sellAmount)
+    const secondary_amount  = parseFloat(sellAmount) //active === 'sell' ? parseFloat(sellAmount) : parseFloat(buyAmount)
 
     if (!secondary_amount || !base_amount) return
 
-    const price   =  secondary_amount/base_amount
+    const price = base_amount/secondary_amount
 
     const params = {
       market: 'TESTNET3RINKEBY',
       side: active === 'sell' ? 2 : 1,
       amount: String(base_amount),
       price: String(price),
-      taker_fee_rate: '1',
-      maker_fee_rate: '1',
+      taker_fee_rate: '',
+      maker_fee_rate: '',
       source: ''
     }
 
@@ -63,34 +53,16 @@ class Order extends Component {
     })
   }
 
-  handleSetRate = (sellCurrency, buyCurrency) => {
-    let { buyAmount, sellAmount } = this.state
-
-    const exchangeRate = rating[`${sellCurrency}${buyCurrency}`]
-
-    buyAmount  = (sellAmount || 0) * exchangeRate
-    sellAmount = (buyAmount || 0) / exchangeRate
-
-    this.setState({
-      exchangeRate,
-      buyAmount,
-      sellAmount,
-    })
-  }
 
   handleSellAmountChange = (value) => {
-    const { exchangeRate } = this.state
-
     this.setState({
-      buyAmount: value * exchangeRate,
+      sellAmount: value ,
     })
   }
 
   handleBuyAmountChange = (value) => {
-    const { exchangeRate } = this.state
-
     this.setState({
-      sellAmount: value / exchangeRate
+      buyAmount: value
     })
   }
 
@@ -100,8 +72,6 @@ class Order extends Component {
     if (buyCurrency === value) {
       buyCurrency = sellCurrency
     }
-
-    this.handleSetRate(value, buyCurrency)
 
     this.setState({
       sellCurrency: value,
@@ -115,8 +85,6 @@ class Order extends Component {
     if (sellCurrency === value) {
       sellCurrency = buyCurrency
     }
-
-    this.handleSetRate(sellCurrency, value)
 
     this.setState({
       buyCurrency: value,
