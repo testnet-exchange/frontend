@@ -27,11 +27,12 @@ class Order extends Component {
     if (!secondary_amount || !base_amount) return
 
     const price = base_amount/secondary_amount
+    const amount = secondary_amount
 
     const params = {
       market: 'TESTNET3RINKEBY',
       side: active === 'sell' ? 1 : 2,
-      amount: String(base_amount),
+      amount: String(amount),
       price: String(price),
       taker_fee_rate: '',
       maker_fee_rate: '',
