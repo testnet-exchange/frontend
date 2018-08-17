@@ -30,7 +30,7 @@ class Order extends Component {
 
     const params = {
       market: 'TESTNET3RINKEBY',
-      side: active === 'sell' ? 2 : 1,
+      side: active === 'sell' ? 1 : 2,
       amount: String(base_amount),
       price: String(price),
       taker_fee_rate: '',
